@@ -1,0 +1,80 @@
+<p>lista works! <br/>&nbsp;</p>
+
+<h2>Listado de Héroes</h2>
+
+<ul class="mt-2 list-group">
+    <li> {{ heroNames }} </li>
+</ul>
+
+<br/>&nbsp;
+
+<ul class="mt-2 list-group">
+    <li class="list-group-item">H1</li>
+    <li class="list-group-item">H2</li>
+    <li class="list-group-item">H3</li>
+    <li class="list-group-item">H4</li>
+    <li class="list-group-item">H5</li>
+</ul>
+
+<br/>&nbsp;
+<!-- <ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item">Heroe1</li>
+</ul> -->
+
+@if (heroeBorrado!)
+ {
+    <div>
+      <h3>
+        El Heroe Borrado es
+        <small class="text-danger">{{ heroeBorrado }}</small>
+      </h3>
+    </div>
+ }
+@else
+ {
+    <ng-template [ngTemplateOutlet]="outlet" [ngOutletContext]="context">
+      <h3>
+        No ha Borrado NADA
+      </h3>
+    </ng-template>
+ }
+
+<!-- ANTES de la Version 17
+     si la expresion no se cumple
+     entonces se cumple el elemento de la referencia local nothingWasDelete
+<div *ngIf="heroeBorrado"; else nothingWasDelete>
+  <h3>
+    El Heroe Borrado es
+    <small class="text-danger">{{ heroeBorrado }}</small>
+  </h3>
+</div>
+
+<ng-template #nothingWasDelete>
+  <h3>
+    No ha Borrado NADA
+  </h3>
+</ng-template> -->
+
+
+ <br/>&nbsp;
+
+ @if (heroNames.length > 0)
+   {
+    <button
+      (click)="borraUltH()"
+      class="btn btn-outline-danger">
+        Borrar Último Heroe
+    </button>
+
+    <br/>&nbsp;
+   }
+
+
+<ul class="mt-2 list-group">
+  <li> {{ heroNames }} </li>
+</ul>
+
+<br/>&nbsp;
+<h3>
+  <br/><br/>---
+</h3>

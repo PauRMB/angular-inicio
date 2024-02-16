@@ -1,0 +1,59 @@
+<p>heroe works!</p>
+<h2> Etiqueta1 h2 </h2>
+<p>{{ nameH }}</p>
+
+<dl>
+   <td>Nombre:</td>
+   <dd>{{ nameP }}</dd>
+
+   <td>Edad:</td>
+   <dd>{{ age }}</dd>
+
+   <td>Método:</td>
+   <dd>{{ getHeroDesc() }}</dd>
+
+   <td>Capitalizado:</td>
+   <dd>{{ getCapitalName() }}</dd>
+</dl>
+
+<!-- *ngIf="nameH !== 'Canario Negro'" antes -->
+@if (nameH === 'Ironman')
+ {
+      <button
+        (click)="cambiarNombreH()"
+        class="btn btn-primary mx-2"
+      >
+        Cambiar Nombre
+      </button>
+ }
+
+
+<!-- *ngif="age !== 33" antes -->
+@if (age === 45)
+ {
+      <button
+        (click)="cambiarEdadH()"
+        class="btn btn-primary"
+      >
+        Cambiar Edad
+      </button>
+ }
+
+
+<button
+  (click)="resetForm()"
+   class="btn btn-primary mx-2"
+>
+   Restaurar
+</button>
+
+
+<button
+  (click)="cambiarH2()"
+   class="btn btn-primary mx-2"
+>
+   Cambiar H2
+</button>
+
+
+<h2>Etiqueta2 h2</h2>
